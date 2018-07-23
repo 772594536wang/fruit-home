@@ -3,8 +3,11 @@ package com.wei.fruithome.dao.user;
 import com.wei.fruithome.entity.user.User;
 import com.wei.fruithome.entity.user.UserExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface UserMapper {
     long countByExample(UserExample example);
 
