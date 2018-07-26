@@ -8,3 +8,12 @@ spring:
     username: root
     password: 123456
     driverClassName: com.mysql.jdbc.Driver
+debug: true
+logging:
+  file: fruithome.log
+  level:
+    com.wei.fruithome.dao.user: debug
+
+mybatis:
+  type-aliases-package: com.wei.fruithome.dao
+  mapper-locations: mapper/*.xml
