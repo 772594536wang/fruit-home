@@ -1,14 +1,23 @@
 server:
-  port: 8081
+  port: 8083
   servlet:
     context-path: /fruithome
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/fruithome?characterEncoding=utf8&useSSL=true
+    url: jdbc:mysql://127.0.0.1:3306/fruithome
     username: root
     password: 123456
-  jpa:
-    show-sql: true
-
+    driverClassName: com.mysql.jdbc.Driver
+    maxActive: 200
+    initialSize: 2
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
 
