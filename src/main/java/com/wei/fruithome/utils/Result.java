@@ -35,4 +35,16 @@ public class Result<T> {
     public void setData(T data) {
         this.data = data;
     }
+
+    public Result setOk(){
+        this.setStatus(200);
+        this.setMsg("success");
+        return this;
+    }
+
+    public Result setError(){
+        this.setStatus(-1);
+        this.setMsg("error");
+        return this;
+    }
 }

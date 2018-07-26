@@ -14,10 +14,24 @@ public class UserServiceImpl implements UserService{
     private UserMapper userMapper;
 
     @Override
-    public void register(String username, String password) {
-        User user = new User();
-        user.setUsername(username);
-        user.setPassword(password);
+    public void register(User user) {
         userMapper.insert(user);
+    }
+
+    @Override
+    public boolean verifyUserLogin(User user) {
+        return false;
+    }
+
+    @Override
+    public boolean verifyTelephone(String telephone) {
+        Integer count = userMapper.selectTelephoneUnique(telephone);
+        return count == 0;
+    }
+
+    @Override
+    public boolean verifyUsername(String username) {
+        Integer count = userMapper.selectUsernameUnique(username);
+        return count == 0;
     }
 }
